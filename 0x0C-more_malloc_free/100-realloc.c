@@ -18,7 +18,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (ptr == NULL)
 	{
 		tem_blck = malloc(new_size);
-		return (temp_block);
+		return (tem_blck);
 	}
 	else if (new_size == old_size)
 		return (ptr);
