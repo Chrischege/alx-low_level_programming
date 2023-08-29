@@ -1,8 +1,3 @@
-/*
- * File: 100-reverse_listint.c
- * Auth: Brennan D Baraban
- */
-
 #include "lists.h"
 
 /**
@@ -14,22 +9,22 @@
  */
 listint_t *reverse_listint(listint_t **head)
 {
-	listint_t *ahead, *behnd;
+	listint_t *ahead, *behind;
 
 	if (head == NULL || *head == NULL)
 		return (NULL);
 
-	behnd = NULL;
+	behind = NULL;
 
 	while ((*head)->next != NULL)
 	{
 		ahead = (*head)->next;
-		(*head)->next = behnd;
-		behnd = *head;
+		(*head)->next = behind;
+		behind = *head;
 		*head = ahead;
 	}
 
-	(*head)->next = behnd;
+	(*head)->next = behind;
 
 	return (*head);
 }
